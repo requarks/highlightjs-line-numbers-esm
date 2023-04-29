@@ -1,4 +1,4 @@
-# highlightjs-line-numbers.js [![npm](https://img.shields.io/npm/v/highlightjs-line-numbers.js.svg)](https://www.npmjs.com/package/highlightjs-line-numbers.js) ![npm](https://img.shields.io/npm/dw/highlightjs-line-numbers.js.svg)
+# highlightjs-line-numbers-esm [![npm](https://img.shields.io/npm/v/highlightjs-line-numbers.js.svg)](https://www.npmjs.com/package/highlightjs-line-numbers.js) ![npm](https://img.shields.io/npm/dw/highlightjs-line-numbers.js.svg)
 
 [Highlight.js](https://github.com/highlightjs/highlight.js) line numbers plugin.
 
@@ -6,40 +6,33 @@
 
 ## Install
 
-### Npm
+### npm
 
-```
-npm install highlightjs-line-numbers.js
-```
-
-#### Getting the library from CDN
-
-```html
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+```sh
+npm install @requarks/highlightjs-line-numbers-esm
 ```
 
-```html
-<script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
-```
+### yarn
 
-highlightjs-line-numbers.js 2.8.0 is known to work with highlight.js 11.3.1.
+```sh
+yarn add @requarks/highlightjs-line-numbers-esm
+```
 
 ## Usage
 
-Download plugin and include file after highlight.js:
-
-```html
-<script src="path/to/highlight.min.js"></script>
-
-<script src="path/to/highlightjs-line-numbers.min.js"></script>
-```
-
-Initialize plugin after highlight.js:
+Import both Highlight.js and @requarks/highlightjs-line-numbers-esm:
 
 ```js
-hljs.highlightAll();
+import hljs from 'highlight.js'
+import { registerHljsLineNumbers, injectHljsLineNumbersCss } from '@requarks/highlightjs-line-numbers-esm'
 
-hljs.initLineNumbersOnLoad();
+registerHljsLineNumbers(hljs)
+```
+
+Optionally inject the default CSS for line numbers:
+
+```js
+injectHljsLineNumbersCss()
 ```
 
 Here’s an equivalent way to calling `initLineNumbersOnLoad` using jQuery:
@@ -52,7 +45,7 @@ $(document).ready(function() {
 });
 ```
 
-If your needs cool style, add styles by taste:
+If you needs cool style, add styles by taste:
 
 ```css
 /* for block of numbers */
