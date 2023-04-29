@@ -27,22 +27,9 @@ import hljs from 'highlight.js'
 import { registerHljsLineNumbers, injectHljsLineNumbersCss } from '@requarks/highlightjs-line-numbers-esm'
 
 registerHljsLineNumbers(hljs)
-```
 
-Optionally inject the default CSS for line numbers:
-
-```js
+// optionally inject the default CSS for line numbers:
 injectHljsLineNumbersCss()
-```
-
-Here’s an equivalent way to calling `initLineNumbersOnLoad` using jQuery:
-
-```js
-$(document).ready(function() {
-    $('code.hljs').each(function(i, block) {
-        hljs.lineNumbersBlock(block);
-    });
-});
 ```
 
 If you needs cool style, add styles by taste:
@@ -86,15 +73,15 @@ v2.8    | startFrom  | int     | 1             | [Start numbering from a custom 
 ```js
 hljs.initLineNumbersOnLoad({
     singleLine: true
-});
+})
 ```
 
 ```js
-hljs.lineNumbersBlock(myCodeBlock, myOptions);
+hljs.lineNumbersBlock(myCodeBlock, myOptions)
 ```
 
 ```js
-hljs.lineNumbersValue(myCodeBlock, myOptions);
+hljs.lineNumbersValue(myCodeBlock, myOptions)
 ```
 
 ### startFrom
@@ -144,7 +131,7 @@ CSS selector                             |  description
 
 ## More plugins
 
-- [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting;
+- [highlightjs-lang.js](https://github.com/wcoder/highlightjs-lang.js) — plugin to display language name with formatting
 
 ---
 &copy; 2023 Yauheni Pakala and [Community](https://github.com/wcoder/highlightjs-line-numbers.js/graphs/contributors) | MIT License
